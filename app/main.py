@@ -31,6 +31,7 @@ def render(request: Request, template: str, status_code: int = 200, **context) -
             "nav": content.NAV,
             "offices": content.OFFICES,
             "email": content.EMAIL,
+            "hero_image": content.HERO_IMAGE,
         }
     )
     return templates.TemplateResponse(request=request, name=template, context=context, status_code=status_code)

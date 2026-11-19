@@ -22,7 +22,12 @@
 
     <div class="project-card-grid" data-project-grid>
       {% for project in site.PROJECTS %}
+      {% set media = site.PROJECT_MEDIA[loop.index0] %}
       <article class="project-card reveal" data-year="{{ project.year }}">
+        <div class="project-image">
+          <img src="{{ media.image }}" alt="{{ media.alt }}" loading="lazy">
+          <span>{{ media.category }}</span>
+        </div>
         <div class="project-card-top">
           <span class="project-year">{{ project.year }}</span>
           <span class="project-location">{{ project.location }}</span>

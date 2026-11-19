@@ -13,9 +13,20 @@
 
 <section class="section">
   <div class="container">
-    <div class="card-grid card-grid-3">
+    <div class="service-groups">
+      {% for group in site.SERVICE_GROUPS %}
+      <article class="service-group reveal">
+        <span class="service-group-dot"></span>
+        <span>
+          <strong>{{ group.title }}</strong>
+          <small>{{ group.body }}</small>
+        </span>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="card-grid card-grid-3" id="service-catalogue">
       {% for service in site.SERVICES %}
-      <a class="service-card reveal" href="/services/{{ service.slug }}">
+      <a class="service-card reveal" href="/services/{{ service.slug }}" data-service-group="{% if loop.index <= 8 %}energy{% elif loop.index <= 14 %}renewable{% elif loop.index <= 18 %}environment{% else %}delivery{% endif %}">
         <span class="service-index">{{ '%02d' | format(loop.index) }}</span>
         <h3>{{ service.title }}</h3>
         <p>{{ service.body }}</p>
@@ -46,7 +57,7 @@
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Who we work with</p>
-      <h2 class="display">Six client sectors.</h2>
+      <h2 class="display">Sectors we support.</h2>
     </div>
     <div class="client-grid">
       {% for client in site.CLIENTS %}

@@ -5,6 +5,97 @@ SITE_SHORT = "FCCE"
 TAGLINE = "Sustainable energy creation"
 MOTTO = "The future is green"
 EMAIL = "info@fcceconsultingmw.com"
+HERO_IMAGE = "/static/img/media/black-solar-engineer.jpg"
+
+PROJECT_MEDIA = [
+    {
+        "image": "/static/img/media/african-water-project.jpg",
+        "alt": "African worker carrying a large pipe in a rural water project",
+        "category": "Water systems",
+    },
+    {
+        "image": "/static/img/media/african-solar-community.jpg",
+        "alt": "African woman working beside a traditional rural home",
+        "category": "Community infrastructure",
+    },
+    {
+        "image": "/static/img/media/african-industrial-worker.jpg",
+        "alt": "African industrial worker in a technical setting",
+        "category": "Waste-to-energy",
+    },
+    {
+        "image": "/static/img/media/african-solar-technician.jpg",
+        "alt": "African technician installing solar panels on a rooftop",
+        "category": "Solar water systems",
+    },
+    {
+        "image": "/static/img/media/african-engineering-team.jpg",
+        "alt": "African engineering team reviewing a project blueprint",
+        "category": "Power policy",
+    },
+    {
+        "image": "/static/img/media/african-technology-team.jpg",
+        "alt": "African technology team collaborating in an office",
+        "category": "Energy policy",
+    },
+    {
+        "image": "/static/img/media/black-man-solar.jpg",
+        "alt": "Black technician working with a solar panel",
+        "category": "Utility-scale solar",
+    },
+    {
+        "image": "/static/img/media/black-solar-engineer.jpg",
+        "alt": "Black engineer working on solar energy equipment",
+        "category": "Solar microgrid",
+    },
+    {
+        "image": "/static/img/media/african-solar-worker.jpg",
+        "alt": "African solar worker supporting renewable energy delivery",
+        "category": "Programme review",
+    },
+    {
+        "image": "/static/img/media/african-woman-technology.jpg",
+        "alt": "African woman using technology outdoors",
+        "category": "Energy evaluation",
+    },
+    {
+        "image": "/static/img/media/african-electrician.jpg",
+        "alt": "African female technician working on an electrical control panel",
+        "category": "PV design review",
+    },
+    {
+        "image": "/static/img/media/african-construction-team.jpg",
+        "alt": "African construction workers building infrastructure",
+        "category": "Solar backup",
+    },
+    {
+        "image": "/static/img/media/black-renewable-team.jpg",
+        "alt": "Two people silhouetted against wind turbines",
+        "category": "Solar-wind hybrid",
+    },
+    {
+        "image": "/static/img/media/black-technician-work.jpg",
+        "alt": "Black technician working in a technical environment",
+        "category": "Power generation",
+    },
+    {
+        "image": "/static/img/media/black-woman-engineer.jpg",
+        "alt": "Black woman engineer in a professional technical setting",
+        "category": "Electrical design",
+    },
+    {
+        "image": "/static/img/media/african-field-worker.jpg",
+        "alt": "African field worker in a productive rural landscape",
+        "category": "Implementation",
+    },
+]
+
+SERVICE_GROUPS = [
+    {"title": "Energy & power", "body": "Feasibility, generation, electrical systems and utility-scale energy advice.", "anchor": "energy"},
+    {"title": "Renewable energy", "body": "Solar PV, hybrid systems, microgrids, storage and resource-led design.", "anchor": "renewable"},
+    {"title": "Environment", "body": "Environmental assessments, compliance, sustainability and social safeguards.", "anchor": "environment"},
+    {"title": "Delivery & assurance", "body": "Project management, audits, due diligence, review and training.", "anchor": "delivery"},
+]
 
 NAV = [
     {"label": "Home", "href": "/", "key": "home"},
