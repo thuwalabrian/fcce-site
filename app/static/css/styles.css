@@ -100,40 +100,6 @@ p:last-child { margin-bottom: 0; }
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.header-bulb {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  right: 18%;
-  width: 42px;
-  height: 54px;
-  border: 1px solid rgba(31, 111, 74, 0.16);
-  border-radius: 50% 50% 44% 44%;
-  background: radial-gradient(circle at 50% 42%, rgba(200, 230, 160, 0.48), rgba(200, 230, 160, 0.08) 58%, transparent 70%);
-  box-shadow: 0 0 28px rgba(200, 230, 160, 0.25);
-  transform: translateY(-50%);
-  animation: bulb-float 6s ease-in-out infinite;
-  pointer-events: none;
-}
-.header-bulb::before {
-  content: "";
-  position: absolute;
-  left: 11px;
-  right: 11px;
-  bottom: -7px;
-  height: 8px;
-  border: 1px solid rgba(31, 111, 74, 0.18);
-  border-radius: 0 0 5px 5px;
-  background: rgba(31, 111, 74, 0.08);
-}
-.header-bulb::after {
-  content: "";
-  position: absolute;
-  inset: -14px;
-  border: 1px solid rgba(99, 174, 221, 0.12);
-  border-radius: 50%;
-  animation: bulb-glow 4.5s ease-in-out infinite;
-}
 .header-inner {
   display: flex;
   position: relative;
@@ -593,14 +559,6 @@ p:last-child { margin-bottom: 0; }
 .footer-callout a { color: var(--lime); font-weight: 600; text-decoration: none; }
 .footer-callout a:hover { color: #fff; }
 
-@keyframes bulb-float {
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 5px)); }
-}
-@keyframes bulb-glow {
-  0%, 100% { opacity: 0.35; transform: scale(0.92); }
-  50% { opacity: 0.8; transform: scale(1.05); }
-}
 
 /* ---------- WhatsApp FAB ---------- */
 .whatsapp-fab {
@@ -627,8 +585,7 @@ p:last-child { margin-bottom: 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover, .service-card:hover, .whatsapp-fab:hover { transform: none; }
-  .hero::before, .hero-network::after, .hero-orbit, .hero-node,
-  .header-bulb, .header-bulb::after { animation: none; }
+  .hero::before, .hero-network::after, .hero-orbit, .hero-node { animation: none; }
 }
 
 /* ---------- Responsive ---------- */
@@ -649,7 +606,6 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 760px) {
   .brand-logo { width: 132px; height: 52px; }
-  .header-bulb { right: 25%; opacity: 0.7; transform: translateY(-50%) scale(0.8); }
   .hero-network { right: -14%; top: 62%; width: 260px; opacity: 0.72; }
   .hero-media::after { background: linear-gradient(90deg, rgba(16, 36, 28, 0.84), rgba(16, 36, 28, 0.42)); }
   .trust-grid { grid-template-columns: 1fr; }
