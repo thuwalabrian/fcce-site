@@ -5,7 +5,7 @@ SITE_SHORT = "FCCE"
 TAGLINE = "Sustainable energy creation"
 MOTTO = "The future is green"
 EMAIL = "info@fcceconsultingmw.com"
-HERO_IMAGE = "/static/img/media/black-solar-engineer.jpg"
+HERO_IMAGE = "/static/img/media/black-man-solar.jpg"
 
 PROJECT_MEDIA = [
     {
