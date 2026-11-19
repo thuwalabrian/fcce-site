@@ -1,0 +1,26 @@
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="FC Consulting Engineers — home">
+      <img class="brand-logo" src="/static/img/FCCE%20Logo-hd.png" alt="FC Consulting Engineers logo">
+      <span class="brand-text">
+        <span class="brand-name">FC Consulting Engineers</span>
+        <span class="brand-tag">The future is green</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" data-nav>
+      <ul class="nav-list">
+        {% for item in nav %}
+        <li>
+          <a href="{{ item.href }}" class="nav-link{% if page == item.key %} is-active{% endif %}"{% if page == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="/contact#callback" class="btn btn-primary nav-cta">Start a project</a>
+    </nav>
+  </div>
+</header>

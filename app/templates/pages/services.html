@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Services — FC Consulting Engineers{% endblock %}
+{% block description %}Specialist engineering and environmental consulting services across feasibility, design, review, delivery and assessment.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow reveal">Our services</p>
+    <h1 class="page-title reveal">Engineering support across <span class="accent">the whole project lifecycle.</span></h1>
+    <p class="page-lede reveal">Specialist services spanning feasibility studies, system design, project management, audits, environmental assessments and training.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card-grid card-grid-3">
+      {% for service in site.SERVICES %}
+      <a class="service-card reveal" href="/services/{{ service.slug }}">
+        <span class="service-index">{{ '%02d' | format(loop.index) }}</span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.body }}</p>
+        <span class="card-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted">
+  <div class="container split">
+    <div class="split-lead reveal">
+      <p class="eyebrow">Deliverables</p>
+      <h2 class="display">Tangible outputs you can act on.</h2>
+    </div>
+    <div class="split-body reveal">
+      <ul class="deliverable-list">
+        {% for item in site.DELIVERABLES %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Who we work with</p>
+      <h2 class="display">Six client sectors.</h2>
+    </div>
+    <div class="client-grid">
+      {% for client in site.CLIENTS %}
+      <div class="client-card reveal">
+        <h3>{{ client.title }}</h3>
+        <p>{{ client.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <h2 class="cta-title">Not sure which service fits?</h2>
+    <p class="cta-body">Describe your project and we’ll point you to the right starting point.</p>
+    <div class="cta-actions">
+      <a href="/contact#callback" class="btn btn-primary">Talk to an engineer</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

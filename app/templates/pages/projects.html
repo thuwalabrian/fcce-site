@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Projects — FC Consulting Engineers{% endblock %}
+{% block description %}Sixteen documented FC Consulting Engineers projects delivered between 2011 and 2019 in Malawi and Southern Africa, from water systems and policy analysis to solar, grid and waste-to-energy work.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow reveal">Previous projects</p>
+    <h1 class="page-title reveal">A track record across <span class="accent">Malawi and Southern Africa.</span></h1>
+    <p class="page-lede reveal">Sixteen documented assignments between 2011 and 2019 — from water systems and energy policy to solar microgrids, utility-scale plants and waste-to-energy.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar" data-filter-bar>
+      <button class="filter-btn is-active" type="button" data-filter="all">All projects</button>
+      {% for year in site.PROJECTS | map(attribute='year') | unique | sort(reverse=true) %}
+      <button class="filter-btn" type="button" data-filter="{{ year }}">{{ year }}</button>
+      {% endfor %}
+    </div>
+
+    <div class="project-card-grid" data-project-grid>
+      {% for project in site.PROJECTS %}
+      <article class="project-card reveal" data-year="{{ project.year }}">
+        <div class="project-card-top">
+          <span class="project-year">{{ project.year }}</span>
+          <span class="project-location">{{ project.location }}</span>
+        </div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+        <span class="project-client">{{ project.client }}</span>
+        {% if project.reference %}<span class="project-reference">{{ project.reference }}</span>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <h2 class="cta-title">Your project could be next.</h2>
+    <p class="cta-body">Tell us what you’re planning and we’ll bring the same rigour to it.</p>
+    <div class="cta-actions">
+      <a href="/contact#callback" class="btn btn-primary">Start a conversation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

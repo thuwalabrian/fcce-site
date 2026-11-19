@@ -1,0 +1,46 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="/static/img/FCCE%20Logo-hd.png" alt="FC Consulting Engineers logo">
+      <p class="footer-name">FC Consulting Engineers</p>
+      <p class="footer-note">Sustainable energy, electrical power and environmental engineering consulting. The future is green.</p>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-heading">Explore</h2>
+      <ul class="footer-links">
+        {% for item in nav %}
+        <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-heading">Offices</h2>
+      <ul class="footer-links footer-addresses">
+        {% for office in offices %}
+        <li>
+          <span class="footer-office">{{ office.name }} <span class="footer-role">{{ office.role }}</span></span>
+          <span class="footer-addr">{{ office.address_lines | join(", ") }}</span>
+          <a href="tel:{{ office.phone | replace(' ', '') }}">{{ office.phone }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-heading">Get in touch</h2>
+      <ul class="footer-links">
+        <li><a href="mailto:{{ email }}">{{ email }}</a></li>
+        <li><a href="https://wa.me/{{ offices[0].whatsapp }}" target="_blank" rel="noopener">WhatsApp us</a></li>
+        <li><a href="/contact#callback">Request a callback</a></li>
+        <li><a href="https://fcceconsultingmw.com/webmail" target="_blank" rel="noopener">Webmail</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {{ current_year }} FC Consulting Engineers. All rights reserved.</p>
+    <p class="footer-reg">Registered with the National Construction Industry Council (NCIC), Malawi.</p>
+  </div>
+</footer>

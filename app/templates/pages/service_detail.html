@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{ service.title }} — FC Consulting Engineers{% endblock %}
+{% block description %}{{ service.body }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow reveal"><a href="/services" class="breadcrumb-link">Services</a> / {{ service.title }}</p>
+    <h1 class="page-title reveal">{{ service.title }}</h1>
+    <p class="page-lede reveal">{{ service.body }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-lead reveal">
+      <p class="eyebrow">What this involves</p>
+      <h2 class="display">How we deliver it.</h2>
+    </div>
+    <div class="split-body reveal">
+      <p>{{ service.detail }}</p>
+      <a href="/contact#callback" class="btn btn-primary">Discuss this service</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Other services</p>
+      <h2 class="display">Explore the full practice.</h2>
+    </div>
+    <div class="pill-list">
+      {% for other in site.SERVICES %}
+      {% if other.slug != service.slug %}
+      <a class="pill reveal" href="/services/{{ other.slug }}">{{ other.title }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}FC Consulting Engineers — Sustainable energy consulting in Malawi{% endblock %}
+{% block description %}FCCE delivers engineering and environmental consulting in electrical power, energy and environment across Malawi. The future is green.{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow reveal">FC Consulting Engineers</p>
+    <h1 class="hero-title reveal">An established, duly registered <span class="accent">consulting firm.</span></h1>
+    <p class="hero-lede reveal">With a remarkable track record in conventional energy systems, renewable energy and the environment, FCCE provides high-quality professional consulting services in Malawi and beyond.</p>
+    <div class="hero-actions reveal">
+      <a href="/contact#callback" class="btn btn-primary">Start a project</a>
+      <a href="/services" class="btn btn-ghost">Explore services</a>
+    </div>
+  </div>
+  <div class="hero-mark" aria-hidden="true">THE FUTURE IS GREEN</div>
+</section>
+
+<section class="firm-band">
+  <div class="container firm-band-inner reveal">
+    <p>FCCE focuses on <strong>conventional energy systems</strong>, <strong>renewable energy</strong> and the <strong>environment</strong>.</p>
+    <p>Registered in Malawi with the <strong>National Construction Industry Council (NCIC)</strong> and relevant professional authorities.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-lead reveal">
+      <p class="eyebrow">FC Consulting Engineers</p>
+      <h2 class="display">A registered Malawian firm with an international outlook.</h2>
+    </div>
+    <div class="split-body reveal">
+      <p>Established in 2016, FCCE helps organisations make confident energy and environmental decisions — from early feasibility through design, review and delivery.</p>
+      <p>Our work combines local knowledge with an international outlook, giving clients practical advice that is technically rigorous, commercially aware and built for long-term value.</p>
+      <a href="/about" class="text-link">About the firm</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected services</p>
+      <h2 class="display">Specialist services across the energy lifecycle.</h2>
+    </div>
+    <div class="card-grid">
+      {% for service in site.SERVICES[:6] %}
+      <a class="service-card reveal" href="/services/{{ service.slug }}">
+        <span class="service-index">0{{ loop.index }}</span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.body }}</p>
+        <span class="card-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="section-foot reveal">
+      <a href="/services" class="btn btn-ghost">View all services</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected track record</p>
+      <h2 class="display">Selected projects, 2011–2019.</h2>
+    </div>
+    <ul class="project-list">
+      {% for project in site.PROJECTS[:5] %}
+      <li class="project-row reveal">
+        <span class="project-year">{{ project.year }}</span>
+        <span class="project-title">{{ project.title }}</span>
+        <span class="project-client">{{ project.client }}</span>
+        <span class="project-location">{{ project.location }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="section-foot reveal">
+      <a href="/projects" class="btn btn-ghost">View the full portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Firm leadership</p>
+      <h2 class="display">Technical leadership behind the advice.</h2>
+    </div>
+    <div class="split leadership-summary">
+      <div class="split-lead reveal">
+        <p class="display">A partnership of complementary engineering disciplines.</p>
+      </div>
+      <div class="split-body reveal">
+        <p>FCCE is led by principal engineers with complementary expertise in mechanical and environmental engineering, electrical power and renewable energy.</p>
+        <p>Meet the partners, review their credentials and learn how their experience supports the firm’s work.</p>
+      </div>
+    </div>
+    <div class="section-foot reveal">
+      <a href="/about#leadership" class="btn btn-ghost">Meet the leadership</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <h2 class="cta-title">Have a project in mind?</h2>
+    <p class="cta-body">Tell us what you are planning — feasibility, design, review or delivery. We’ll tell you how we can help.</p>
+    <div class="cta-actions">
+      <a href="/contact#callback" class="btn btn-primary">Request a callback</a>
+      <a href="https://wa.me/{{ offices[0].whatsapp }}" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp us</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

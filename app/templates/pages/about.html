@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}About — FC Consulting Engineers{% endblock %}
+{% block description %}FC Consulting Engineers is a duly registered Malawian consulting firm established in 2016, providing engineering and environmental consulting.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow reveal">About the firm</p>
+    <h1 class="page-title reveal">A registered consulting firm with <span class="accent">a proven track record.</span></h1>
+    <p class="page-lede reveal">FC Consulting Engineers was established in 2016 in Malawi and delivers professional engineering and environmental consulting locally and internationally. We are registered with all relevant authorities in Malawi, including the National Construction Industry Council (NCIC).</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-lead reveal">
+      <p class="eyebrow">Our vision</p>
+      <h2 class="display">To be a world-class independent consultant in electrical power, energy and environment.</h2>
+    </div>
+    <div class="split-body reveal">
+      <p>FCCE is a partnership company led by Eng. Mr. Fredrick Munthali and Eng. Dr. Collen Zalengera. The firm is supported by a highly motivated management team and trained technical personnel with expertise in energy, electrical, mechanical, process and environmental work.</p>
+      <p>Our firm provides technical and economic feasibility studies, engineering design, project management, due-diligence reviews, audits, environmental assessment and professional training — always with sustainability as a design requirement, not an afterthought.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our values</p>
+      <h2 class="display">Six pillars that guide every engagement.</h2>
+    </div>
+    <div class="value-grid">
+      {% for value in site.VALUES %}
+      <div class="value-card reveal">
+        <span class="value-index">0{{ loop.index }}</span>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Leadership</p>
+      <h2 class="display">Led by principal engineers.</h2>
+    </div>
+    <div class="leader-grid" id="leadership">
+      {% for leader in site.LEADERSHIP %}
+      <article class="leader-card reveal">
+        <img class="leader-photo" src="{{ leader.image }}" alt="{{ leader.name }}">
+        <div class="leader-head">
+          <h3 class="leader-name">{{ leader.name }}</h3>
+          <p class="leader-role">{{ leader.role }} · {{ leader.experience }}</p>
+          <p class="leader-focus">{{ leader.focus }}</p>
+        </div>
+        <p class="leader-bio">{{ leader.bio }}</p>
+        <ul class="credential-list">
+          {% for credential in leader.credentials %}
+          <li>{{ credential }}</li>
+          {% endfor %}
+        </ul>
+        {% if leader.email %}
+        <p class="leader-email"><a href="mailto:{{ leader.email }}">{{ leader.email }}</a></p>
+        {% endif %}
+        {% if leader.linkedin or leader.facebook %}
+        <div class="leader-links">
+          {% if leader.linkedin %}<a href="{{ leader.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
+          {% if leader.facebook %}<a href="{{ leader.facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a>{% endif %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <h2 class="cta-title">Work with our team.</h2>
+    <p class="cta-body">Whether you need a second opinion, a full feasibility study or delivery support — we’re ready.</p>
+    <div class="cta-actions">
+      <a href="/contact#callback" class="btn btn-primary">Request a callback</a>
+      <a href="/projects" class="btn btn-ghost">See our work</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

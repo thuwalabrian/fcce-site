@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Contact — FC Consulting Engineers{% endblock %}
+{% block description %}Contact FCCE in Lilongwe or Mzuzu. Email info@fcceconsultingmw.com, call, WhatsApp or request a callback.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow reveal">Contact</p>
+    <h1 class="page-title reveal">Let’s talk about <span class="accent">your project.</span></h1>
+    <p class="page-lede reveal">Two offices in Malawi. Call, email, WhatsApp us, or request a callback and we’ll come back to you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-offices reveal">
+      <h2 class="display">Our offices</h2>
+      <div class="office-grid">
+        {% for office in offices %}
+        <article class="office-card">
+          <h3>{{ office.name }}</h3>
+          <p class="office-role">{{ office.role }}</p>
+          <address>
+            {% for line in office.address_lines %}
+            {{ line }}{% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </address>
+          <a href="tel:{{ office.phone | replace(' ', '') }}" class="office-phone">{{ office.phone }}</a>
+          <a href="https://wa.me/{{ office.whatsapp }}" target="_blank" rel="noopener" class="text-link">WhatsApp {{ office.name }}</a>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="contact-direct">
+        <p><span class="contact-label">Email</span> <a href="mailto:{{ email }}">{{ email }}</a></p>
+        <p><span class="contact-label">Webmail</span> <a href="https://fcceconsultingmw.com/webmail" target="_blank" rel="noopener">Sign in</a></p>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal" id="callback">
+      <h2 class="display">Request a callback</h2>
+      <p class="form-lede">Send us a few details and we’ll get back to you within one working day.</p>
+      {% if sent %}<p class="form-success">Thank you — your request has been received. We’ll be in touch within one working day.</p>{% endif %}
+      {% if form_error %}<p class="form-status is-error">Please check the form and try again.</p>{% endif %}
+      <form class="contact-form" action="/contact" method="post" data-contact-form novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="organisation">Organisation</label>
+          <input type="text" id="organisation" name="organisation" autocomplete="organization">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" autocomplete="street-address">
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" autocomplete="address-level2">
+          </div>
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" autocomplete="country-name">
+        </div>
+        <div class="field">
+          <label for="service">Service of interest</label>
+          <select id="service" name="service">
+            <option value="">Select a service</option>
+            {% for service in site.SERVICES %}
+            <option value="{{ service.slug }}">{{ service.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send request</button>
+        <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}FC Consulting Engineers{% endblock %}</title>
+  <meta name="description" content="{% block description %}FC Consulting Engineers (FCCE) — sustainable energy, electrical power and environmental engineering consulting in Malawi. The future is green.{% endblock %}">
+  <link rel="icon" type="image/png" sizes="64x64" href="/static/img/favicon.png">
+  <link rel="apple-touch-icon" href="/static/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  {% block head %}{% endblock %}
+</head>
+<body class="page-{{ page }}">
+  {% include "partials/header.html" %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  {% include "partials/footer.html" %}
+  {% include "partials/whatsapp.html" %}
+  <script src="/static/js/main.js" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
