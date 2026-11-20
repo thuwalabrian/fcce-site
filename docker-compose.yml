@@ -1,0 +1,28 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://fcce:fcce-password@db:5432/fcce
+      FCCE_SITE_URL: http://localhost:8000
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: fcce
+      POSTGRES_USER: fcce
+      POSTGRES_PASSWORD: fcce-password
+    volumes:
+      - fcce-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fcce -d fcce"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  fcce-postgres:
