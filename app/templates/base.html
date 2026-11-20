@@ -4,20 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}FC Consulting Engineers{% endblock %}</title>
-  <meta name="description" content="{% block description %}FC Consulting Engineers (FCCE) — sustainable energy, electrical power and environmental engineering consulting in Malawi. The future is green.{% endblock %}">
+  <meta name="description" content="{% block description %}FC Consulting Engineers (FCCE) provides sustainable energy, electrical power and environmental consulting. The future is green.{% endblock %}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="robots" content="{{ robots|default("index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1") }}">
+  <meta name="author" content="FC Consulting Engineers">
+  <meta name="theme-color" content="#1f6f4a">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="FC Consulting Engineers">
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ self.description() }}{% endblock %}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:image" content="{{ social_image_url }}">
+  <meta property="og:image:alt" content="FC Consulting Engineers ? sustainable energy and environmental consulting">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ self.title() }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ self.description() }}{% endblock %}">
+  <meta name="twitter:image" content="{{ social_image_url }}">
   <link rel="icon" type="image/png" sizes="64x64" href="/static/img/favicon.png">
   <link rel="apple-touch-icon" href="/static/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/styles.css">
+  {% if structured_data %}<script type="application/ld+json">{{ structured_data | safe }}</script>{% endif %}
   {% block head %}{% endblock %}
 </head>
 <body class="page-{{ page }}">
   {% include "partials/header.html" %}
-  <main>
-    {% block content %}{% endblock %}
-  </main>
+  <main>{% block content %}{% endblock %}</main>
   {% include "partials/footer.html" %}
   {% include "partials/whatsapp.html" %}
   <script src="/static/js/main.js" defer></script>
