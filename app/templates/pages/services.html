@@ -26,8 +26,12 @@
     </div>
     <div class="card-grid card-grid-3" id="service-catalogue">
       {% for service in site.SERVICES %}
+      {% set media = site.SERVICE_MEDIA[loop.index0] %}
       <a class="service-card reveal" href="/services/{{ service.slug }}" data-service-group="{% if loop.index <= 8 %}energy{% elif loop.index <= 14 %}renewable{% elif loop.index <= 18 %}environment{% else %}delivery{% endif %}">
-        <span class="service-index">{{ '%02d' | format(loop.index) }}</span>
+        <div class="service-card-media">
+          <img src="{{ media.image }}" alt="{{ media.alt }}" loading="lazy">
+          <span class="service-index">{{ '%02d' | format(loop.index) }}</span>
+        </div>
         <h3>{{ service.title }}</h3>
         <p>{{ service.body }}</p>
         <span class="card-arrow" aria-hidden="true">&rarr;</span>

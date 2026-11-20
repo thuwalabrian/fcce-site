@@ -97,6 +97,32 @@ SERVICE_GROUPS = [
     {"title": "Delivery & assurance", "body": "Project management, audits, due diligence, review and training.", "anchor": "delivery"},
 ]
 
+SERVICE_MEDIA = [
+    {"image": "/static/img/media/african-engineering-team.jpg", "alt": "African engineering team reviewing a project blueprint"},
+    {"image": "/static/img/media/african-solar-technician.jpg", "alt": "African technician installing solar panels"},
+    {"image": "/static/img/media/african-technology-team.jpg", "alt": "African technology team collaborating in an office"},
+    {"image": "/static/img/media/african-electrician.jpg", "alt": "African technician inspecting an electrical control panel"},
+    {"image": "/static/img/media/african-field-worker.jpg", "alt": "African field worker assessing a rural project site"},
+    {"image": "/static/img/media/african-solar-worker.jpg", "alt": "African worker supporting a solar energy project"},
+    {"image": "/static/img/media/black-woman-engineer.jpg", "alt": "Black woman engineer in a technical workplace"},
+    {"image": "/static/img/media/african-construction-team.jpg", "alt": "African construction team building infrastructure"},
+    {"image": "/static/img/media/african-industrial-worker.jpg", "alt": "African industrial worker at technical equipment"},
+    {"image": "/static/img/media/african-solar-community.jpg", "alt": "African community beside a rural renewable-energy setting"},
+    {"image": "/static/img/media/african-water-project.jpg", "alt": "African worker carrying pipe for a community water project"},
+    {"image": "/static/img/media/africa-solar-landscape.jpg", "alt": "Solar panels across a rural African landscape"},
+    {"image": "/static/img/media/africa-power-lines.jpg", "alt": "Power lines across an African landscape"},
+    {"image": "/static/img/media/black-renewable-team.jpg", "alt": "Renewable-energy team silhouetted against wind turbines"},
+    {"image": "/static/img/media/african-woman-technology.jpg", "alt": "African woman using technology outdoors"},
+    {"image": "/static/img/media/black-man-solar.jpg", "alt": "Black solar technician working with a photovoltaic panel"},
+    {"image": "/static/img/media/african-wind-energy.jpg", "alt": "Renewable wind-energy infrastructure"},
+    {"image": "/static/img/media/solar-hillside.jpg", "alt": "Solar array across a green hillside landscape"},
+    {"image": "/static/img/media/community-water.jpg", "alt": "Community water infrastructure in a rural setting"},
+    {"image": "/static/img/media/waste-energy.jpg", "alt": "Waste materials prepared for sustainable energy recovery"},
+    {"image": "/static/img/media/policy-analysis.jpg", "alt": "Technical policy and project analysis documents"},
+    {"image": "/static/img/media/energy-framework.jpg", "alt": "Energy network and policy framework visual"},
+    {"image": "/static/img/media/implementation.jpg", "alt": "Engineer reviewing project implementation plans"},
+]
+
 NAV = [
     {"label": "Home", "href": "/", "key": "home"},
     {"label": "About", "href": "/about", "key": "about"},

@@ -3,7 +3,14 @@
 {% block description %}{{ service.body }}{% endblock %}
 
 {% block content %}
-<section class="page-hero">
+{% set ns = namespace(media=none) %}
+{% for item in site.SERVICES %}
+  {% if item.slug == service.slug %}
+    {% set ns.media = site.SERVICE_MEDIA[loop.index0] %}
+  {% endif %}
+{% endfor %}
+<section class="page-hero service-detail-hero{% if ns.media %} has-media{% endif %}">
+  {% if ns.media %}<div class="service-detail-media" style="background-image: url('{{ ns.media.image }}');" aria-label="{{ ns.media.alt }}"></div>{% endif %}
   <div class="container">
     <p class="eyebrow reveal"><a href="/services" class="breadcrumb-link">Services</a> / {{ service.title }}</p>
     <h1 class="page-title reveal">{{ service.title }}</h1>
